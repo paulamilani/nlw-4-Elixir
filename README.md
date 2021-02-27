@@ -20,25 +20,25 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 
 
-# setup - nlw#4 Elixir
---install postgres
-docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
+## setup - nlw#4 Elixir
+* install postgres
+`docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres`
 
---create project
-mix phx.new name_project --now-webpack --no-html
+* create project
+`mix phx.new name_project --now-webpack --no-html`
 
 
---database
-mix ecto.setup
+* database
+`mix ecto.setup`
 
---lib credo
-{:credo, "~>1.5", only: [:dev, :test], runtime: false}
+* lib credo
+`{:credo, "~>1.5", only: [:dev, :test], runtime: false}`
 
---dependencies
-mix deps.get
+* dependencies
+`mix deps.get`
 
---build
-mix credo gen.config
+* build
+`mix credo gen.config`
 
---start project
-mix phx.server
+* start project
+`mix phx.server`
